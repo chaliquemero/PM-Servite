@@ -9,7 +9,7 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -630,9 +630,10 @@
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
-    nav { padding: 0 20px; }
-    nav ul a { font-size: 11px; padding: 6px 10px; }
-    .cover { padding: 80px 24px 40px; min-height: auto; }
+    body { overflow-x: hidden; }
+    nav { padding: 0 14px; }
+    nav ul a { font-size: 11px; padding: 8px 9px; }
+    .cover { padding: 76px 24px 40px; min-height: auto; }
     .cover-title { font-size: 34px; }
     .cover-meta { flex-direction: column; gap: 16px; }
     section { padding: 48px 20px; }
@@ -641,14 +642,72 @@
     .pitch-dual { grid-template-columns: 1fr; }
     .matrix-grid { grid-template-rows: auto; }
     .quadrant { min-height: 120px; }
-    .matrix-axis-y { left: -44px; font-size: 9px; }
-    .matrix-axis-x { font-size: 9px; }
     .section-title { font-size: 24px; }
+
+    .table-wrap { overflow: visible; border: none; border-radius: 0; }
+    .table-wrap thead { display: none; }
+    .table-wrap table,
+    .table-wrap tbody,
+    .table-wrap tr,
+    .table-wrap td { display: block; width: 100%; }
+    .table-wrap tbody tr {
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 6px 16px 10px;
+      margin-bottom: 14px;
+      background: #fff;
+    }
+    .table-wrap tbody tr:nth-child(even) { background: #fff; }
+    .table-wrap tbody td {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 9px 0;
+      border: none;
+      border-bottom: 1px solid #f0f0f0;
+      line-height: 1.45;
+    }
+    .table-wrap tbody td:last-child { border-bottom: none; }
+    .table-wrap tbody td::before {
+      content: attr(data-label);
+      font-size: 9px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      flex-shrink: 0;
+      min-width: 76px;
+      padding-top: 2px;
+    }
+    .table-wrap tbody td:nth-child(1)::before { content: "Stakeholder"; }
+    .table-wrap tbody td:nth-child(2)::before { content: "Rol"; }
+    .table-wrap tbody td:nth-child(3)::before { content: "Influencia"; }
+    .table-wrap tbody td:nth-child(4)::before { content: "Interés"; }
+    .table-wrap tbody td:nth-child(5)::before { content: "Tipo"; }
+
+    .matrix-axis-y,
+    .matrix-axis-x {
+      position: static;
+      transform: none;
+      font-size: 9px;
+      text-align: center;
+      margin-top: 12px;
+      letter-spacing: 0.8px;
+    }
+    .matrix-arrow-r, .matrix-arrow-u { display: none; }
   }
 
   @media (max-width: 480px) {
+    nav { flex-wrap: wrap; height: auto; min-height: 56px; row-gap: 2px; padding: 0 12px; }
+    nav .logo span { display: none; }
+    .cover { padding: 70px 18px 32px; }
     .cover-title { font-size: 26px; }
-    nav ul { display: none; }
+    .cover-tagline { letter-spacing: 3px; }
+  }
+
+  @media (hover: none) {
+    .dot::after, .dot::before { display: none; }
   }
 </style>
 </head>
