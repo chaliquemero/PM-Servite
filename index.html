@@ -328,14 +328,13 @@
   .matrix-wrap {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 680px;
     margin: 10px auto 24px;
   }
 
   .matrix-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px;
     border: 2px solid #0a0a0a;
     position: relative;
     border-radius: 4px;
@@ -348,6 +347,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 140px;
   }
 
   .quadrant h4 {
@@ -369,9 +369,9 @@
 
   .dot {
     display: inline-block;
-    padding: 6px 16px;
+    padding: 4px 12px;
     border-radius: 20px;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     color: #fff;
     margin: 3px;
@@ -789,15 +789,14 @@
         <div class="matrix-grid">
           <div class="quadrant q2">
             <h4>Mantener Satisfechos</h4>
-            <span class="dot dot-green" data-rol="Ejecución técnica">Desarrolladores</span>
+            <span class="dot dot-green" data-rol="Ejecución técnica">Devs</span>
             <span class="dot dot-green" data-rol="Financiador">Inversor</span>
           </div>
           <div class="quadrant q1">
             <h4>Gestionar de Cerca</h4>
-            <span class="dot dot-red" data-rol="Dueño de visión y producto">Co-founder Producto</span>
-            <span class="dot dot-red" data-rol="Socio &mdash; operaciones y logística">Co-founder Operaciones</span>
+            <span class="dot dot-red" data-rol="Co-founders &mdash; visión y operaciones">Co-founders</span>
             <span class="dot dot-red" data-rol="Cliente (B2B)">Organizador</span>
-            <span class="dot dot-red" data-rol="Cliente (B2B)">Dueño del Bar</span>
+            <span class="dot dot-red" data-rol="Cliente (B2B)">Bar</span>
             <span class="dot dot-red" data-rol="Usuario del sistema">Consumidor</span>
           </div>
           <div class="quadrant q4">
