@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>SERVITE — 2 Páginas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 11mm 13mm 8mm;
+    position: relative;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ===== HEADER PAGE 1 ===== */
+  .header {
+    background: #0a0a0a;
+    border-top: 1.2mm solid #c0392b;
+    border-radius: 2mm;
+    padding: 8mm 9mm 7mm;
+    margin-bottom: 6mm;
+  }
+  .header-logo img { height: 7.5mm; }
+  .header-tagline {
+    font-size: 2.6mm;
+    font-weight: 600;
+    color: #777;
+    letter-spacing: 1.6mm;
+    text-transform: uppercase;
+    margin-top: 7mm;
+  }
+  .header-line {
+    width: 14mm;
+    height: 1mm;
+    background: linear-gradient(90deg, #c0392b, #e74c3c);
+    border-radius: 1mm;
+    margin-top: 2.6mm;
+  }
+  .header-title {
+    font-size: 8.5mm;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.12;
+    margin-top: 4mm;
+    letter-spacing: -0.3mm;
+  }
+  .header-title span {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header-sub {
+    font-size: 2.9mm;
+    color: #888;
+    margin-top: 3mm;
+  }
+  .header-meta {
+    display: flex;
+    gap: 9mm;
+    margin-top: 5mm;
+    padding-top: 3.5mm;
+    border-top: 0.3mm solid rgba(255,255,255,0.09);
+  }
+  .header-meta-item { font-size: 2.5mm; color: #777; line-height: 1.5; }
+  .header-meta-item strong {
+    display: block;
+    color: #999;
+    font-size: 2.2mm;
+    text-transform: uppercase;
+    letter-spacing: 0.7mm;
+  }
+
+  /* ===== SECTIONS ===== */
+  .sec { margin-bottom: 4.5mm; }
+  .sec-head { display: flex; align-items: center; gap: 3mm; margin-bottom: 2.5mm; }
+  .sec-num { font-size: 2.5mm; font-weight: 800; color: #c0392b; letter-spacing: 1mm; }
+  .sec-bar { flex: 1; height: 0.5mm; background: linear-gradient(90deg, #0a0a0a, transparent); border-radius: 0.5mm; }
+  .sec-title { font-size: 5mm; font-weight: 800; color: #0a0a0a; letter-spacing: -0.1mm; }
+  .sec-title .accent {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ===== PITCH ===== */
+  .pitch {
+    background: linear-gradient(135deg, #faf8f8, #f5f0f0);
+    border-left: 1mm solid #c0392b;
+    border-radius: 0 1.5mm 1.5mm 0;
+    padding: 3mm 4mm;
+    margin-bottom: 2.5mm;
+  }
+  .pitch h4 { font-size: 2.3mm; font-weight: 700; color: #c0392b; text-transform: uppercase; letter-spacing: 0.7mm; margin-bottom: 1.5mm; }
+  .pitch p { font-size: 3mm; line-height: 1.55; color: #333; }
+
+  .text p { font-size: 2.8mm; line-height: 1.55; color: #444; margin-bottom: 1.8mm; }
+  .text p strong { color: #0a0a0a; }
+  .text p:last-child { margin-bottom: 0; }
+
+  /* ===== CLASS TABLE ===== */
+  .class-table { width: 100%; border-collapse: collapse; font-size: 2.8mm; }
+  .class-table td { padding: 1.9mm 2.5mm; border: 0.3mm solid #e8e8e8; line-height: 1.45; vertical-align: top; }
+  .class-table tr:nth-child(odd) td { background: #f8f8f8; }
+  .class-table td:first-child {
+    width: 34mm;
+    font-size: 2.4mm;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.4mm;
+  }
+
+  /* ===== STAKEHOLDER TABLE ===== */
+  .stk-table { width: 100%; border-collapse: collapse; font-size: 2.55mm; }
+  .stk-table th {
+    background: #0a0a0a; color: #fff; text-align: left;
+    padding: 1.8mm 2.2mm; font-size: 2.2mm; text-transform: uppercase; letter-spacing: 0.5mm;
+  }
+  .stk-table td { padding: 1.7mm 2.2mm; border-bottom: 0.3mm solid #eee; vertical-align: top; line-height: 1.4; }
+  .stk-table tr:nth-child(even) td { background: #fafafa; }
+  .stk-table td strong { color: #0a0a0a; }
+  .inf-hi { color: #c0392b; font-weight: 700; }
+  .inf-md { color: #e67e22; font-weight: 700; }
+  .tag {
+    display: inline-block; font-size: 2.1mm; font-weight: 700;
+    padding: 0.6mm 2mm; border-radius: 3mm;
+  }
+  .t-int   { background: #e8e8e8; color: #555; }
+  .t-paga  { background: #fde8e8; color: #c0392b; }
+  .t-usa   { background: #e8f0fe; color: #1a56db; }
+  .t-ases  { background: #fef3e2; color: #b8860b; }
+  .t-fin   { background: #e8f5e9; color: #2e7d32; }
+  .t-ext   { background: #f3e8fd; color: #7b2d8e; }
+
+  /* ===== MATRIX ===== */
+  .matrix { display: grid; grid-template-columns: 1fr 1fr; border: 0.8mm solid #0a0a0a; border-radius: 1mm; overflow: hidden; }
+  .quad { padding: 2.5mm 2.5mm; border: 0.3mm solid #d8d8d8; display: flex; flex-direction: column; align-items: center; }
+  .quad h5 { font-size: 2.4mm; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4mm; margin-bottom: 1.8mm; }
+  .q-sat { background: #e8f5e9; } .q-sat h5 { color: #2e7d32; }
+  .q-ges { background: #fde8e8; } .q-ges h5 { color: #c0392b; }
+  .q-mon { background: #f5f5f5; } .q-mon h5 { color: #999; }
+  .q-inf { background: #fff8e1; } .q-inf h5 { color: #b8860b; }
+  .dot {
+    display: inline-block; font-size: 2.3mm; font-weight: 700; color: #fff;
+    padding: 0.7mm 2.6mm; border-radius: 4mm; margin: 0.5mm;
+  }
+  .d-red    { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+  .d-green  { background: linear-gradient(135deg, #2e7d32, #388e3c); }
+  .d-orange { background: linear-gradient(135deg, #b8860b, #d4a017); }
+  .d-gray   { background: linear-gradient(135deg, #888, #aaa); }
+  .matrix-axes {
+    font-size: 2.2mm; font-weight: 700; color: #888;
+    text-transform: uppercase; letter-spacing: 0.6mm;
+    text-align: center; margin-top: 1.6mm;
+  }
+
+  /* ===== RISKS ===== */
+  .risk {
+    background: linear-gradient(135deg, #faf8f8, #f5f0f0);
+    border-left: 1mm solid #c0392b;
+    border-radius: 0 1.5mm 1.5mm 0;
+    padding: 2.5mm 3.5mm;
+    margin-bottom: 2mm;
+  }
+  .risk.dark { border-left-color: #0a0a0a; }
+  .risk h4 { font-size: 2.4mm; font-weight: 700; color: #0a0a0a; text-transform: uppercase; letter-spacing: 0.5mm; margin-bottom: 1.2mm; }
+  .risk h4 .sub { font-weight: 400; color: #aaa; text-transform: none; letter-spacing: 0; }
+  .risk p { font-size: 2.75mm; line-height: 1.5; color: #444; }
+
+  .crit { font-size: 2.6mm; padding: 1.6mm 0; border-bottom: 0.3mm solid #eee; display: flex; gap: 3mm; }
+  .crit:last-child { border-bottom: none; }
+  .crit .n { font-size: 4mm; font-weight: 900; width: 6mm; flex-shrink: 0; color: #c0392b; line-height: 1; }
+  .crit p { color: #444; line-height: 1.45; }
+  .crit strong { color: #0a0a0a; }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    position: absolute; bottom: 5mm; left: 13mm; right: 13mm;
+    border-top: 0.3mm solid #eee; padding-top: 2mm;
+    font-size: 2.3mm; color: #999; text-align: center; letter-spacing: 0.3mm;
+  }
+  .footer strong { color: #555; }
+
+  /* ===== PAGE 2 HEADER ===== */
+  .p2-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4mm; }
+  .p2-head img { height: 4.5mm; opacity: 0.7; }
+  .p2-head .line { flex: 1; height: 0.5mm; background: linear-gradient(90deg, #0a0a0a, #333); border-radius: 0.5mm; margin-right: 3mm; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 ============ -->
+<div class="page">
+
+  <div class="header">
+    <div class="header-logo"><img src="img/Logotipo_Negativo.png" alt="SERVITE"></div>
+    <div class="header-tagline">Self-Service Beverage System</div>
+    <div class="header-line"></div>
+    <div class="header-title">Definición Inicial del Producto y <span>Mapa de Actores</span></div>
+    <div class="header-sub">Módulo de Estrategia de Producto</div>
+    <div class="header-meta">
+      <div class="header-meta-item"><strong>Documento</strong>Versión 1.1 &mdash; Julio 2026</div>
+      <div class="header-meta-item"><strong>Modelo</strong>B2B2C &middot; SaaS &middot; IoT</div>
+      <div class="header-meta-item"><strong>Stakeholders</strong>10 actores identificados</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <div class="sec-bar"></div>
+    </div>
+    <h2 class="sec-title">Resumen <span class="accent">Ejecutivo</span></h2>
+
+    <div class="pitch">
+      <h4>Elevator Pitch</h4>
+      <p>SERVITE es un sistema de autoservicio de bebidas que combina canillas inteligentes con una plataforma digital, permitiendo a los usuarios servirse de forma autónoma a través de una app, tarjetas NFC o pagos con código QR/tarjetas de crédito.</p>
+    </div>
+
+    <div class="text">
+      <p><strong>Para el negocio:</strong> Elimina las largas filas que limitan el consumo, reduce la pérdida de ventas en momentos de alta demanda, disminuye los altos costos operativos del personal de barra y soluciona la falta de control e información en tiempo real sobre las ventas.</p>
+      <p><strong>Para el usuario:</strong> Elimina las esperas innecesarias, la falta de autonomía y la mala experiencia al intentar consumir con agilidad en eventos pagos.</p>
+      <p><strong>Valor generado:</strong> Aumenta la velocidad de atención, multiplica los puntos de venta sin contratar más personal y ofrece múltiples métodos de pago sin fricción, maximizando las ventas del organizador y mejorando radicalmente la experiencia del consumidor.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <div class="sec-bar"></div>
+    </div>
+    <h2 class="sec-title">Clasificación del <span class="accent">Producto</span></h2>
+
+    <table class="class-table">
+      <tr><td>Tipo</td><td>Plataforma B2B2C (Software as a Service + IoT/Hardware)</td></tr>
+      <tr><td>Componentes</td><td>Plataforma de gestión para el comercio, software de usuario final (App/Web) y equipos físicos (módulos de canillas)</td></tr>
+      <tr><td>Usuario que paga</td><td>Organizador de eventos / dueño del bar</td></tr>
+      <tr><td>Usuario que usa</td><td>Asistente al evento / consumidor final</td></tr>
+      <tr><td>Objetivo general</td><td>Transformar y optimizar la operación de barras en eventos, automatizando el despacho de bebidas para aumentar la capacidad de atención, brindando control total sobre el consumo y generando métricas en tiempo real.</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <strong>SERVITE</strong> &mdash; Documento de trabajo &mdash; Versión 1.1 &mdash; Julio 2026
+  </div>
+</div>
+
+<!-- ============ PAGE 2 ============ -->
+<div class="page">
+
+  <div class="p2-head">
+    <div class="line"></div>
+    <img src="img/Logotipo_Negro.png" alt="SERVITE">
+  </div>
+
+  <div class="sec">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <div class="sec-bar"></div>
+    </div>
+    <h2 class="sec-title">Mapa de <span class="accent">Stakeholders</span></h2>
+
+    <table class="stk-table">
+      <thead>
+        <tr>
+          <th style="width:22%;">Stakeholder</th>
+          <th style="width:18%;">Rol</th>
+          <th style="width:9%;">Inf.</th>
+          <th style="width:35%;">Interés / Motivación</th>
+          <th style="width:16%;">Tipo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Co-founder (Producto)</strong></td>
+          <td>Dueño de visión y producto</td>
+          <td class="inf-hi">Alta</td>
+          <td>Definir estrategia, validar el modelo de negocio, liderar el desarrollo y conseguir los primeros clientes.</td>
+          <td><span class="tag t-int">Interno</span></td>
+        </tr>
+        <tr>
+          <td><strong>Co-founder (Operaciones)</strong></td>
+          <td>Socio &mdash; operaciones y logística</td>
+          <td class="inf-hi">Alta</td>
+          <td>Gestionar alianzas, coordinar proveedores, supervisar la logística de hardware y eventos.</td>
+          <td><span class="tag t-int">Interno</span></td>
+        </tr>
+        <tr>
+          <td><strong>Desarrolladores</strong></td>
+          <td>Ejecución técnica</td>
+          <td class="inf-hi">Alta</td>
+          <td>Construir la plataforma (app, backend, IoT). Su capacidad define la calidad y velocidad del producto.</td>
+          <td><span class="tag t-int">Interno</span></td>
+        </tr>
+        <tr>
+          <td><strong>Abogado</strong></td>
+          <td>Asesor legal</td>
+          <td class="inf-md">Media</td>
+          <td>Contratos con clientes y proveedores, propiedad intelectual, protección de datos, marco regulatorio.</td>
+          <td><span class="tag t-ases">Asesor externo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Contador</strong></td>
+          <td>Asesor financiero</td>
+          <td class="inf-md">Media</td>
+          <td>Estructura societaria, régimen impositivo, facturación, flujo de caja y proyecciones financieras.</td>
+          <td><span class="tag t-ases">Asesor externo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Organizador de Eventos</strong></td>
+          <td>Cliente (B2B)</td>
+          <td class="inf-hi">Alta</td>
+          <td>Maximizar ventas, reducir costos operativos, obtener métricas en tiempo real, mejorar la experiencia del evento.</td>
+          <td><span class="tag t-paga">Usuario que paga</span></td>
+        </tr>
+        <tr>
+          <td><strong>Dueño del Bar</strong></td>
+          <td>Cliente (B2B)</td>
+          <td class="inf-hi">Alta</td>
+          <td>Aumentar el consumo en el local, reducir personal de barra y contar con métricas de venta en tiempo real.</td>
+          <td><span class="tag t-paga">Usuario que paga</span></td>
+        </tr>
+        <tr>
+          <td><strong>Consumidor Final (Asistente)</strong></td>
+          <td>Usuario del sistema</td>
+          <td class="inf-hi">Alta</td>
+          <td>Agilidad para servirse, autonomía, múltiples métodos de pago, evitar filas.</td>
+          <td><span class="tag t-usa">Usuario que usa</span></td>
+        </tr>
+        <tr>
+          <td><strong>Bartenders / Personal de barra</strong></td>
+          <td>Operación del cliente</td>
+          <td class="inf-md">Media</td>
+          <td>Su tarea se automatiza, pero siguen operando el sistema (asistencia, carga de saldo, soporte en el evento); clave para la adopción.</td>
+          <td><span class="tag t-ext">Externo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Inversor / Socio Estratégico</strong></td>
+          <td>Financiador</td>
+          <td class="inf-hi">Alta</td>
+          <td>Retorno sobre inversión, escalabilidad del modelo, tracción en eventos masivos y adopción temprana.</td>
+          <td><span class="tag t-fin">Financiero</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="split">
+    <div class="sec">
+      <div class="sec-head">
+        <span class="sec-num">04</span>
+        <div class="sec-bar"></div>
+      </div>
+      <h2 class="sec-title">Matriz <span class="accent">Inf.&ndash;Int.</span></h2>
+
+      <div class="matrix">
+        <div class="quad q-sat">
+          <h5>Mantener Satisfechos</h5>
+          <span class="dot d-green">Devs</span>
+          <span class="dot d-green">Inversor</span>
+        </div>
+        <div class="quad q-ges">
+          <h5>Gestionar de Cerca</h5>
+          <span class="dot d-red">Co-founders</span>
+          <span class="dot d-red">Organizador</span>
+          <span class="dot d-red">Bar</span>
+          <span class="dot d-red">Consumidor</span>
+        </div>
+        <div class="quad q-mon">
+          <h5>Monitorear</h5>
+          <span class="dot d-gray">Abogado</span>
+          <span class="dot d-gray">Contador</span>
+        </div>
+        <div class="quad q-inf">
+          <h5>Mantener Informados</h5>
+          <span class="dot d-orange">Bartenders</span>
+        </div>
+      </div>
+      <div class="matrix-axes">&uarr; Influencia (Poder) &middot; &rarr; Interés (Motivación)</div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-head">
+        <span class="sec-num">05</span>
+        <div class="sec-bar"></div>
+      </div>
+      <h2 class="sec-title">Análisis de <span class="accent">Riesgos</span></h2>
+
+      <div class="risk">
+        <h4>Desafío Principal <span class="sub">&mdash; Adopción tecnológica</span></h4>
+        <p>Lograr que un usuario en un entorno de ocio descargue la app, se registre y cargue saldo rápidamente sin frustración exige un excelente diseño de experiencia de usuario (UX).</p>
+      </div>
+      <div class="risk dark">
+        <h4>Desafío Operativo <span class="sub">&mdash; Logística de hardware</span></h4>
+        <p>Trasladar e instalar hardware físico (canillas) en eventos temporales representa un desafío operativo constante.</p>
+      </div>
+
+      <h2 class="sec-title" style="font-size:4mm; margin-top:3mm;">Datos <span class="accent">Críticos</span></h2>
+      <div class="crit">
+        <span class="n">01</span>
+        <p><strong>Tasa de conversión real:</strong> % que prefiere app vs pago QR/tarjeta; validar con primeros clientes la viabilidad del modelo compuesto.</p>
+      </div>
+      <div class="crit">
+        <span class="n">02</span>
+        <p><strong>Modelo de negocio compuesto:</strong> &iquest;Sostenible Fee + Alquiler + Tarifa base + % sobre consumo? Validar precio máximo aceptable.</p>
+      </div>
+      <div class="crit">
+        <span class="n">03</span>
+        <p><strong>Registro y primera carga:</strong> si supera los 90 segundos, la tasa de abandono crece exponencialmente en eventos.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>SERVITE</strong> &mdash; Documento de trabajo &mdash; Versión 1.1 &mdash; Julio 2026
+  </div>
+</div>
+
+</body>
+</html>
