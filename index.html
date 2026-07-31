@@ -311,6 +311,7 @@
   .tag-usa       { background: #e8f0fe; color: #1a56db; }
   .tag-asesor    { background: #fef3e2; color: #b8860b; }
   .tag-financiero { background: #e8f5e9; color: #2e7d32; }
+  .tag-externo   { background: #f3e8fd; color: #7b2d8e; }
 
   .influence-high { color: #c0392b; font-weight: 700; }
   .influence-mid  { color: #e67e22; font-weight: 700; }
@@ -697,14 +698,14 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Vos (Founder / PM)</strong></td>
+            <td><strong>Co-founder (Producto)</strong></td>
             <td>Dueño de visión y producto</td>
             <td><span class="influence-high">Alta</span></td>
             <td>Definir estrategia, validar el modelo de negocio, liderar el desarrollo y conseguir los primeros clientes.</td>
             <td><span class="tag tag-interno">Interno</span></td>
           </tr>
           <tr>
-            <td><strong>Primo (Co-founder)</strong></td>
+            <td><strong>Co-founder (Operaciones)</strong></td>
             <td>Socio &mdash; operaciones y logística</td>
             <td><span class="influence-high">Alta</span></td>
             <td>Gestionar alianzas, coordinar proveedores, supervisar la logística de hardware y eventos.</td>
@@ -732,10 +733,17 @@
             <td><span class="tag tag-asesor">Asesor externo</span></td>
           </tr>
           <tr>
-            <td><strong>Organizador de Eventos / Dueño del Bar</strong></td>
+            <td><strong>Organizador de Eventos</strong></td>
             <td>Cliente (B2B)</td>
             <td><span class="influence-high">Alta</span></td>
             <td>Maximizar ventas, reducir costos operativos, obtener métricas en tiempo real, mejorar la experiencia del evento.</td>
+            <td><span class="tag tag-paga">Usuario que paga</span></td>
+          </tr>
+          <tr>
+            <td><strong>Dueño del Bar</strong></td>
+            <td>Cliente (B2B)</td>
+            <td><span class="influence-high">Alta</span></td>
+            <td>Aumentar el consumo en el local, reducir personal de barra y contar con métricas de venta en tiempo real.</td>
             <td><span class="tag tag-paga">Usuario que paga</span></td>
           </tr>
           <tr>
@@ -744,6 +752,13 @@
             <td><span class="influence-high">Alta</span></td>
             <td>Agilidad para servirse, autonomía, múltiples métodos de pago, evitar filas.</td>
             <td><span class="tag tag-usa">Usuario que usa</span></td>
+          </tr>
+          <tr>
+            <td><strong>Bartenders / Personal de barra</strong></td>
+            <td>Operación del cliente</td>
+            <td><span class="influence-mid">Media</span></td>
+            <td>Su tarea se automatiza, pero siguen operando el sistema (asistencia, carga de saldo, soporte en el evento); clave para la adopción.</td>
+            <td><span class="tag tag-externo">Externo</span></td>
           </tr>
           <tr>
             <td><strong>Inversor / Socio Estratégico</strong></td>
@@ -773,15 +788,16 @@
       <div class="matrix-wrap">
         <div class="matrix-grid">
           <div class="quadrant q2">
-            <h4>Mantener Informados</h4>
+            <h4>Mantener Satisfechos</h4>
             <span class="dot dot-green" data-rol="Ejecución técnica">Desarrolladores</span>
             <span class="dot dot-green" data-rol="Financiador">Inversor</span>
           </div>
           <div class="quadrant q1">
             <h4>Gestionar de Cerca</h4>
-            <span class="dot dot-red" data-rol="Dueño de visión y producto">Vos</span>
-            <span class="dot dot-red" data-rol="Socio &mdash; operaciones y logística">Primo</span>
+            <span class="dot dot-red" data-rol="Dueño de visión y producto">Co-founder Producto</span>
+            <span class="dot dot-red" data-rol="Socio &mdash; operaciones y logística">Co-founder Operaciones</span>
             <span class="dot dot-red" data-rol="Cliente (B2B)">Organizador</span>
+            <span class="dot dot-red" data-rol="Cliente (B2B)">Dueño del Bar</span>
             <span class="dot dot-red" data-rol="Usuario del sistema">Consumidor</span>
           </div>
           <div class="quadrant q4">
@@ -790,8 +806,8 @@
             <span class="dot dot-gray" data-rol="Asesor financiero">Contador</span>
           </div>
           <div class="quadrant q3">
-            <h4>Mantener Satisfechos</h4>
-            <span class="dot dot-orange" style="opacity:0.2">&mdash;</span>
+            <h4>Mantener Informados</h4>
+            <span class="dot dot-orange" data-rol="Operación del cliente">Bartenders</span>
           </div>
         </div>
         <div class="matrix-axis matrix-axis-x">Interés (Motivación) &rarr;</div>
